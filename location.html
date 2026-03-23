@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Hero Homes – Location</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@200;300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--black:#0a0a0a;--white:#fff;--accent:#c8a96e;--sidebar-bg:rgba(10,10,10,0.88);--sidebar-w:88px;--radius:14px}
+  html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Jost',sans-serif;-webkit-font-smoothing:antialiased;user-select:none}
+
+  /* MAP */
+  #mapWrap{position:fixed;inset:0;width:100%;height:100%}
+  #mapBg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+
+  /* SVG */
+  #pathSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5;overflow:visible}
+  .rp{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .15s}
+  .rp.on{opacity:1}
+  .rc{opacity:0;transition:opacity .25s .4s}
+  .rc.on{opacity:1}
+
+  /* PINS */
+  #pinLayer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:10}
+  .pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer;pointer-events:all;transition:transform .2s}
+  .pin:hover{transform:translate(-50%,-100%) scale(1.08)}
+  .pin.active{transform:translate(-50%,-100%) scale(1.1)}
+  .pb{display:block;width:52px;height:auto;transition:filter .25s,transform .25s;transform-origin:50% 100%;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.7))}
+  .pin:hover .pb{transform:scale(1.08);filter:drop-shadow(0 4px 16px rgba(0,0,0,0.85))}
+  .pin.active .pb{transform:scale(1.1);transform-origin:50% 100%}
+
+  /* HOME */
+  .pin-home{transform: translate(-45%, -89%) !important;}
+  .pin-home:hover{transform:translate(-45%, -89%) scale(1.05) !important}
+  .pin-home .pb{width:140px;height:auto;filter:drop-shadow(0 0 10px rgba(200,169,110,0.5)) drop-shadow(0 4px 14px rgba(0,0,0,0.8))}
+  @keyframes hp{0%,100%{filter:drop-shadow(0 0 10px rgba(200,169,110,0.5)) drop-shadow(0 4px 14px rgba(0,0,0,0.8))}50%{filter:drop-shadow(0 0 22px rgba(200,169,110,0.85)) drop-shadow(0 4px 18px rgba(0,0,0,0.8))}}
+  .pin-home .pb{animation:hp 2.5s ease-in-out infinite}
+
+  /* GLOW — hover */
+  .pin[data-id="indiabulls"]:hover .pb{filter:drop-shadow(0 0 8px rgba(255,255,255,0.6)) drop-shadow(0 4px 12px rgba(0,0,0,0.7))}
+  .pin[data-id="railway"]:hover .pb{filter:drop-shadow(0 0 8px rgba(255,255,255,0.6)) drop-shadow(0 4px 12px rgba(0,0,0,0.7))}
+  .pin[data-id="haldiram"]:hover .pb{filter:drop-shadow(0 0 8px rgba(255,255,255,0.6)) drop-shadow(0 4px 12px rgba(0,0,0,0.7))}
+  .pin[data-id="dwarka"]:hover .pb{filter:drop-shadow(0 0 8px rgba(255,255,255,0.6)) drop-shadow(0 4px 12px rgba(0,0,0,0.7))}
+  .pin[data-id="hospital"]:hover .pb{filter:drop-shadow(0 0 8px rgba(255,255,255,0.6)) drop-shadow(0 4px 12px rgba(0,0,0,0.7))}
+  .pin[data-id="school"]:hover .pb{filter:drop-shadow(0 0 8px rgba(255,255,255,0.6)) drop-shadow(0 4px 12px rgba(0,0,0,0.7))}
+  /* GLOW — active */
+  .pin[data-id="indiabulls"].active .pb{filter:drop-shadow(0 0 16px rgba(255,255,255,1)) drop-shadow(0 0 32px rgba(255,255,255,0.5))}
+  .pin[data-id="railway"].active .pb{filter:drop-shadow(0 0 16px rgba(255,255,255,1)) drop-shadow(0 0 32px rgba(255,255,255,0.5))}
+  .pin[data-id="haldiram"].active .pb{filter:drop-shadow(0 0 16px rgba(255,255,255,1)) drop-shadow(0 0 32px rgba(255,255,255,0.5))}
+  .pin[data-id="dwarka"].active .pb{filter:drop-shadow(0 0 16px rgba(255,255,255,1)) drop-shadow(0 0 32px rgba(255,255,255,0.5))}
+  .pin[data-id="hospital"].active .pb{filter:drop-shadow(0 0 16px rgba(255,255,255,1)) drop-shadow(0 0 32px rgba(255,255,255,0.5))}
+  .pin[data-id="school"].active .pb{filter:drop-shadow(0 0 16px rgba(255,255,255,1)) drop-shadow(0 0 32px rgba(255,255,255,0.5))}
+
+  /* INFO CARD — bottom center above category chips */
+  #card{position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-10px);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;}
+  #card.on{opacity:1;transform:translateX(8%) translateY(0);pointer-events:auto}
+  #cardImg{display:block;width:320px;max-width:90vw;height:auto;border-radius:16px;cursor:pointer}
+
+  /* CATEGORY BAR */
+  #cats{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:300;flex-wrap:nowrap;padding:0 110px}
+  .cb2{padding:8px 16px;border-radius:40px;border:1px solid rgba(255,255,255,.14);background:rgba(10,10,10,.88);backdrop-filter:blur(12px);color:rgba(255,255,255,.5);font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.08em;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap}
+  .cb2:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+  .cb2.on{color:#0a0a0a;border-color:transparent;font-weight:500}
+  .cb2 svg{width:13px;height:13px;flex-shrink:0}
+
+  /* BACK BUTTON — matches index.html */
+  .bb{position:fixed;top:16px;left:16px;width:46px;height:46px;background:var(--sidebar-bg);backdrop-filter:blur(16px);border-radius:var(--radius);border:none;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;z-index:200;transition:background .2s}
+  .bb:hover{background:rgba(200,169,110,.25)}
+
+  /* BRAND — matches index.html */
+  .br{position:fixed;top:16px;left:16px;display:flex;align-items:center;gap:8px;z-index:200;background:var(--sidebar-bg);backdrop-filter:blur(16px);border-radius:var(--radius);padding:8px 14px}
+  .bi{width:32px;height:32px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
+  .bi img{width:100%;height:100%;object-fit:cover}
+  .bn{font-family:'Cormorant Garamond',serif;font-size:.85rem;font-weight:500;color:#fff;letter-spacing:.12em;text-transform:uppercase;line-height:1.2}
+  .bn small{display:block;font-size:.6rem;font-weight:300;opacity:.55;letter-spacing:.2em}
+
+  /* TOP RIGHT ACTIONS — matches index.html round black buttons */
+  .ta{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:200}
+  .ta button{width:46px;height:46px;background:#0a0a0a;border-radius:50%;border:none;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .15s}
+  .ta button:hover{background:#222;transform:scale(1.05)}
+  .ta button svg{width:18px;height:18px}
+
+  /* SIDEBAR — matches index.html exactly */
+  .sb{position:fixed;left:16px;top:50%;transform:translateY(-50%);width:var(--sidebar-w);background:var(--sidebar-bg);backdrop-filter:blur(20px);border-radius:20px;border:1px solid rgba(255,255,255,.06);z-index:200;padding:8px 0;display:flex;flex-direction:column}
+  .ni{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:14px 6px;color:rgba(255,255,255,.55);cursor:pointer;transition:color .2s,background .2s;border-radius:14px;margin:2px 6px;text-decoration:none}
+  .ni:hover{color:#fff;background:rgba(255,255,255,.07)}
+  .ni.active{color:#fff;background:rgba(255,255,255,.1)}
+  .ni svg{width:20px;height:20px;stroke-width:1.6}
+  .ni span{font-size:.6rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+
+  /* DARK OVERLAY — shown when any pin is active */
+  #darkOverlay{
+    position:fixed;inset:0;
+    background:rgba(0,0,0,0);
+    z-index:4;
+    pointer-events:none;
+    transition:background .5s ease;
+  }
+  #darkOverlay.on{
+    background:rgba(0,0,0,0.62);
+    pointer-events:all;
+  }
+
+  @media(max-width:600px){
+    :root{--sidebar-w:70px}
+    .br{display:none}
+    #cats{padding:0 10px;gap:5px;overflow-x:auto;width:100%;justify-content:flex-start}
+    .cb2{padding:7px 12px;font-size:.62rem}
+    #cardImg{width:calc(100vw - 32px)}
+  }
+
+  /* ── CONTACT POPUP ── */
+  #contactBackdrop {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 800;
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s ease;
+  }
+  #contactBackdrop.show { opacity: 1; pointer-events: all; }
+
+  #contactPopup {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -48%) scale(.96);
+    z-index: 900;
+    width: min(480px, calc(100vw - 40px));
+    background: rgba(10,10,10,.97);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px;
+    padding: 32px 28px 28px;
+    box-shadow: 0 32px 80px rgba(0,0,0,.8);
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s ease, transform .3s cubic-bezier(.25,.46,.45,.94);
+  }
+  #contactPopup.show {
+    opacity: 1; pointer-events: all;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .cp-head {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; margin-bottom: 6px;
+  }
+  .cp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 500;
+    color: #fff; letter-spacing: .02em; line-height: 1.2;
+  }
+  .cp-close {
+    width: 32px; height: 32px; flex-shrink: 0;
+    background: rgba(255,255,255,.08);
+    border: none; border-radius: 50%; cursor: pointer;
+    color: rgba(255,255,255,.6);
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s, color .2s; margin-top: 2px;
+  }
+  .cp-close:hover { background: rgba(255,255,255,.15); color: #fff; }
+  .cp-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: .78rem; color: rgba(255,255,255,.45);
+    letter-spacing: .02em; margin-bottom: 24px;
+  }
+
+  .cp-field { margin-bottom: 16px; }
+  .cp-label {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: .72rem; font-weight: 500;
+    color: rgba(255,255,255,.7);
+    letter-spacing: .06em; text-transform: uppercase;
+    margin-bottom: 7px;
+  }
+  .cp-input {
+    width: 100%; padding: 13px 16px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Jost', sans-serif; font-size: .88rem;
+    outline: none;
+    transition: border-color .2s, background .2s;
+    -webkit-appearance: none;
+  }
+  .cp-input::placeholder { color: rgba(255,255,255,.25); }
+  .cp-input:focus {
+    border-color: rgba(200,169,110,.5);
+    background: rgba(255,255,255,.08);
+  }
+
+  .cp-submit {
+    width: 100%; padding: 14px;
+    margin-top: 8px;
+    background: #fff;
+    border: none; border-radius: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: .88rem; font-weight: 500;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: #0a0a0a; cursor: pointer;
+    transition: background .2s, transform .15s;
+  }
+  .cp-submit:hover { background: #e8c98e; transform: scale(1.01); }
+  .cp-submit:active { transform: scale(.99); }
+
+  .cp-success {
+    text-align: center; padding: 16px 0 8px;
+    display: none;
+  }
+  .cp-success-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(200,169,110,.15);
+    border: 1px solid rgba(200,169,110,.3);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+  }
+  .cp-success-icon svg { stroke: #c8a96e; }
+  .cp-success h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: #fff; margin-bottom: 6px;
+  }
+  .cp-success p {
+    font-family: 'Jost', sans-serif;
+    font-size: .76rem; color: rgba(255,255,255,.45);
+  }
+
+  @media (max-width: 600px) {
+    #contactPopup { padding: 24px 20px 20px; border-radius: 16px; }
+    .cp-title { font-size: 1.3rem; }
+  }
+
+  /* ── MOBILE LANDSCAPE ── */
+  @media (max-height: 500px) and (orientation: landscape) {
+    :root { --sidebar-w: 56px; }
+
+    /* Brand — hidden, no vertical room */
+    .br { display: none; }
+
+    /* Back button — compact */
+    .bb {
+      top: 8px; left: 8px;
+      width: 34px; height: 34px;
+      border-radius: 10px;
+    }
+    .bb svg { width: 16px; height: 16px; }
+
+    /* Top-right actions — smaller, tighter */
+    .ta { top: 8px; right: 8px; gap: 5px; }
+    .ta button { width: 34px; height: 34px; }
+    .ta button svg { width: 15px; height: 15px; }
+
+    /* Sidebar — compact */
+    .sb {
+      left: 8px;
+      width: var(--sidebar-w);
+      border-radius: 13px;
+      padding: 3px 0;
+    }
+    .ni {
+      padding: 6px 3px;
+      gap: 2px;
+      margin: 1px 3px;
+      border-radius: 9px;
+    }
+    .ni svg { width: 14px; height: 14px; }
+    .ni span { font-size: .44rem; letter-spacing: .04em; }
+
+    /* Category chips bar — hug the bottom, narrower pills */
+    #cats {
+      bottom: 8px;
+      padding: 0 70px;       /* clear sidebar (56px) + 14px gap */
+      gap: 5px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .cb2 {
+      padding: 5px 10px;
+      font-size: .60rem;
+      border-radius: 30px;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .cb2 svg { width: 11px; height: 11px; }
+
+    /* Info card — make it narrower and move down from top */
+    #card { top: 8px; }
+    #cardImg {
+      width: clamp(180px, 38vw, 260px);
+      border-radius: 10px;
+    }
+
+    /* Pins — scale down slightly so they don't crowd the map */
+    .pb { width: 38px; }
+    .pin-home .pb { width: 100px; }
+
+    /* Contact popup — compact, scrollable */
+    #contactPopup {
+      width: min(90vw, 480px);
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 18px 16px 16px;
+      border-radius: 14px;
+    }
+    .cp-title { font-size: 1.1rem; }
+    .cp-sub { font-size: .72rem; margin-bottom: 14px; }
+    .cp-field { margin-bottom: 10px; }
+    .cp-input { padding: 9px 12px; font-size: .82rem; }
+    .cp-submit { padding: 10px; font-size: .82rem; }
+  }
+/* ── TILT / ROTATE SCREEN OVERLAY ── */
+#tiltOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0a0a0a;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  text-align: center;
+  padding: 24px;
+  overflow: hidden;
+}
+#tiltOverlay.show { display: flex; }
+
+#tiltParticles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#tiltPhoneWrap {
+  position: relative;
+  margin-bottom: 32px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tilt-ring {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(200,169,110,0.35);
+  pointer-events: none;
+}
+.tilt-ring-2 {
+  border-color: rgba(200,169,110,0.18);
+}
+
+#tiltPhone {
+  width: 32px;
+  height: 56px;
+  filter: drop-shadow(0 0 10px rgba(200,169,110,0.5));
+}
+
+#tiltTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+#tiltSub {
+  font-family: 'Jost', sans-serif;
+  font-size: .7rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.tilt-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: .55;
+}
+.tilt-divider-line {
+  width: 28px;
+  height: 1px;
+  background: rgba(200,169,110,0.6);
+}
+</style>
+</head>
+<body>
+
+<div id="mapWrap">
+  <img id="mapBg" src="herohomesmap.webp" alt="Hero Homes Location Map"/>
+
+  <!-- DARK OVERLAY -->
+  <div id="darkOverlay"></div>
+
+  <svg id="pathSvg" viewBox="0 0 3840 2160" preserveAspectRatio="xMidYMid slice">
+    <defs><filter id="gf"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+
+    <!-- Dwarka Express Highway -->
+    <path id="rp-dwarka" class="rp" stroke="#ffffff" filter="url(#gf)"
+      d="M2393,1039 L2311,1003 L2240,1021 L2157,1056 L2074,1080 L2009,1098 L1926,1121 L1926,1121 L1861,1145"/>
+    <circle id="rc-dwarka" class="rc" cx="1861" cy="1145" r="9" fill="#ffffff" filter="url(#gf)"/>
+
+    <!-- Haldiram's -->
+    <path id="rp-haldiram" class="rp" stroke="#ffffff" filter="url(#gf)"
+      d="M2405,1039 L2322,1009 L2157,1056 L1926,1121 L1689,1187 L1464,1252 L1257,1323 L1092,1364 L967,1400 L885,1435 L814,1459 L748,1423 L648,1400 L559,1382 L429,1382 L441,1329"/>
+    <circle id="rc-haldiram" class="rc" cx="441" cy="1329" r="9" fill="#ffffff" filter="url(#gf)"/>
+
+    <!-- Indiabulls -->
+    <path id="rp-indiabulls" class="rp" stroke="#ffffff" filter="url(#gf)"
+      d="M2376,1033 L2311,997 L2240,1015 L2180,1039 L2086,1074 L1967,1098 L1855,1139 L1742,1121 L1636,1110 L1535,1092 L1435,1056 L1305,1044 L1222,1021 L1133,997 L1038,973 L1003,968 L1103,914 L1198,891 L1299,867 L1370,843 L1429,826 L1559,826 L1618,826"/>
+    <circle id="rc-indiabulls" class="rc" cx="1618" cy="826" r="9" fill="#ffffff" filter="url(#gf)"/>
+
+    <!-- ESIC Hospital -->
+    <path id="rp-hospital" class="rp" stroke="#ffffff" filter="url(#gf)"
+      d="M2387,1033 L2322,1009 L2234,1027 L2145,1056 L2050,1080 L1956,1110 L1867,1145 L1772,1175 L1695,1187 L1636,1204 L1571,1228 L1648,1246 L1713,1269 L1790,1287 L1884,1311 L1956,1334 L2050,1352 L2115,1382 L2169,1429 L2228,1465 L2287,1482 L2334,1494 L2376,1524 L2447,1506 L2524,1500 L2612,1476 L2683,1471 L2772,1453 L2855,1441 L2920,1423 L3003,1411 L3062,1394 L3103,1394"/>
+    <circle id="rc-hospital" class="rc" cx="3103" cy="1394" r="9" fill="#ffffff" filter="url(#gf)"/>
+
+    <!-- M.M. Public School -->
+    <path id="rp-school" class="rp" stroke="#ffffff" filter="url(#gf)"
+      d="M2387,1044 L2340,1003 L2393,973 L2488,956 L2595,914 L2654,932 L2731,944 L2802,968 L2849,985 L2920,1015 L2973,1039 L3032,1062 L3080,1074 L3145,1050 L3222,1009 L3328,956 L3393,973 L3470,997 L3565,1056 L3618,1068 L3671,1104 L3600,1127 L3565,1163 L3518,1204"/>
+    <circle id="rc-school" class="rc" cx="3518" cy="1204" r="9" fill="#ffffff" filter="url(#gf)"/>
+
+    <!-- Gurgaon Railway Station -->
+    <path id="rp-railway" class="rp" stroke="#ffffff" filter="url(#gf)"
+      d="M2382,1044 L2322,997 L2441,962 L2547,926 L2595,908 L2671,926 L2748,950 L2813,973 L2873,997 L2932,1021 L2973,1044 L3038,1068 L3080,1074 L3133,1056 L3192,1027 L3239,1009 L3299,968 L3334,932"/>
+    <circle id="rc-railway" class="rc" cx="3334" cy="932" r="9" fill="#ffffff" filter="url(#gf)"/>
+  </svg>
+
+  <div id="pinLayer">
+
+    <!-- HOME -->
+    <div class="pin pin-home" style="left:62.11%;top:47.96%">
+      <img class="pb" src="map/hero_homes_pointer.png" width="120" alt="Hero Homes"/>
+    </div>
+
+    <!-- INDIABULLS -->
+    <div class="pin" id="pin-indiabulls" data-id="indiabulls" style="left:42.14%;top:38.24%">
+      <img class="pb" src="map/Indiabulls_Centrum_Park.png" width="52" alt="Indiabulls"/>
+    </div>
+
+    <!-- GURGAON RAILWAY -->
+    <div class="pin" id="pin-railway" data-id="railway" style="left:86.82%;top:43.15%">
+      <img class="pb" src="map/Gurgaon_Railway_Station.png" width="52" alt="Railway"/>
+    </div>
+
+    <!-- HALDIRAM -->
+    <div class="pin" id="pin-haldiram" data-id="haldiram" style="left:11.48%;top:61.53%">
+      <img class="pb" src="map/_Haldiram_s___Satya_Mall.png" width="52" alt="Haldiram"/>
+    </div>
+
+    <!-- DWARKA -->
+    <div class="pin" id="pin-dwarka" data-id="dwarka" style="left:48.46%;top:53.01%">
+      <img class="pb" src="map/Dwarka_Expressway.png" width="52" alt="Dwarka"/>
+    </div>
+
+    <!-- HOSPITAL -->
+    <div class="pin" id="pin-hospital" data-id="hospital" style="left:80.81%;top:64.54%">
+      <img class="pb" src="map/_ESIC_Hospital.png" width="52" alt="ESIC Hospital"/>
+    </div>
+
+    <!-- SCHOOL -->
+    <div class="pin" id="pin-school" data-id="school" style="left:91.61%;top:55.74%">
+      <img class="pb" src="map/_M_M__Public_School.png" width="52" alt="MM School"/>
+    </div>
+
+  </div>
+</div>
+
+<!-- INFO CARD — bottom center, above category chips -->
+<div id="card">
+  <img id="cardImg" src="" alt="Location card"/>
+</div>
+
+<!-- CATEGORY CHIPS -->
+<div id="cats">
+  <button class="cb2 on" data-cat="all">All</button>
+  <button class="cb2" data-cat="transit">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="12" rx="2"/><path d="M2 10h20M6 14v4M18 14v4"/></svg>Transit
+  </button>
+  <button class="cb2" data-cat="health">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12h8M12 8v8"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>Health
+  </button>
+  <button class="cb2" data-cat="retail">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.69l1.64-9.31H6"/></svg>Retail
+  </button>
+  <button class="cb2" data-cat="education">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>Education
+  </button>
+</div>
+
+<!-- BACK -->
+<!-- BRAND -->
+<div class="br" style="padding:6px 10px">
+  <img src="palatial-project-logo.png" alt="The Palatial by Hero Homes" style="height:52px;width:auto;display:block;object-fit:contain"/>
+</div>
+
+<!-- TOP RIGHT -->
+<div class="ta">
+  <button id="btnFS">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+  </button>
+  <button onclick="openContact()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3-8.58A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14A16 16 0 0015.86 17.09l1.41-1.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </button>
+  <button>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+  </button>
+</div>
+
+<!-- SIDEBAR — matches index.html -->
+<nav class="sb">
+  <a class="ni" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="ni active" href="#">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <span>Location</span>
+  </a>
+  <a class="ni" href="inventory.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    <span>Inventory</span>
+  </a>
+  <a class="ni"  href="windowview.html" >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="2" width="18" height="17" rx="1.5"/>
+      <line x1="1" y1="19" x2="23" y2="19"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+      <line x1="12" y1="2" x2="12" y2="19"/>
+    </svg>
+    <span style="text-align:center;line-height:1.3">WINDOW<br>VIEW</span>
+  </a>
+  <a class="ni" href="hero-homes.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <span>Gallery</span>
+  </a>
+</nav>
+
+<script>
+(()=>{
+  const L = {
+    indiabulls: { name:'Indiabulls Centrum Park', card:'indiabulls.png', meta:'Commercial Complex · Sector 103', dist:'1.4 km', time:'4 min drive', color:'#ef4444', cat:'retail' },
+    railway:    { name:'Gurgaon Railway Station',  card:'gurgaonrailwaystation.png', meta:'Indian Railways · Ashok Vihar', dist:'3.2 km', time:'8 min drive', color:'#eab308', cat:'transit' },
+    haldiram:   { name:"Haldiram's – Satya Mall",  card:'haldiram.png', meta:'Food & Retail · Dhankot, Gurugram', dist:'3.6 km', time:'9 min drive', color:'#3b82f6', cat:'retail' },
+    dwarka:     { name:'Dwarka Expressway',        card:'dwarka.png', meta:'6-Lane National Highway · Adjacent', dist:'0.2 km', time:'1 min walk', color:'#f97316', cat:'transit' },
+    hospital:   { name:'ESIC Model Hospital',      card:'esichospital.png', meta:'Multi-Specialty · Sector 9A, Gurugram', dist:'3.8 km', time:'10 min drive', color:'#a855f7', cat:'health' },
+    school:     { name:'M.M. Public School',       card:'mmpublicschool.png', meta:'CBSE School · Laxman Vihar, Sector 4', dist:'2.1 km', time:'5 min drive', color:'#22c55e', cat:'education' }
+  };
+
+  const CC = { all:'#c8a96e', transit:'#f97316', health:'#a855f7', retail:'#3b82f6', education:'#22c55e' };
+  let active = null;
+
+  function anim(id) {
+    const p=document.getElementById('rp-'+id), c=document.getElementById('rc-'+id);
+    if(!p)return;
+    const len=p.getTotalLength();
+    p.style.strokeDasharray=len; p.style.strokeDashoffset=len; p.style.transition='none';
+    p.classList.add('on'); void p.getBoundingClientRect();
+    p.style.transition='stroke-dashoffset 3.5s cubic-bezier(0.3,0,0.4,1)';
+    p.style.strokeDashoffset='0';
+    if(c)c.classList.add('on');
+  }
+
+  function clear(id) {
+    const p=document.getElementById('rp-'+id), c=document.getElementById('rc-'+id);
+    if(p){p.style.transition='opacity .2s';p.classList.remove('on');setTimeout(()=>{p.style.strokeDasharray='';p.style.strokeDashoffset=''},220);}
+    if(c)c.classList.remove('on');
+  }
+
+  function clearAll(){Object.keys(L).forEach(clear);}
+
+  function showCard(id){
+    document.getElementById('cardImg').src='cards/'+L[id].card;
+    document.getElementById('card').classList.add('on');
+  }
+
+  document.querySelectorAll('.pin[data-id]').forEach(pin=>{
+    pin.addEventListener('click',()=>{
+      const id=pin.dataset.id;
+      if(id===active){pin.classList.remove('active');clear(id);active=null;document.getElementById('card').classList.remove('on');document.getElementById('darkOverlay').classList.remove('on');return;}
+      if(active){
+        document.getElementById('pin-'+active)?.classList.remove('active');
+        clearAll();
+        active=id; pin.classList.add('active');
+        document.getElementById('darkOverlay').classList.add('on');
+        showCard(id);
+        // Wait for previous path to fully clear before starting new animation
+        setTimeout(()=>{ if(active===id) anim(id); }, 250);
+      } else {
+        active=id; pin.classList.add('active');
+        document.getElementById('darkOverlay').classList.add('on');
+        anim(id); showCard(id);
+      }
+    });
+  });
+
+  document.querySelectorAll('.cb2').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const cat=btn.dataset.cat;
+      document.querySelectorAll('.cb2').forEach(b=>{b.classList.remove('on');b.style.background='';b.style.color='';});
+      btn.classList.add('on'); btn.style.background=CC[cat]; btn.style.color='#0a0a0a';
+      document.querySelectorAll('.pin[data-id]').forEach(pin=>{
+        const show=cat==='all'||L[pin.dataset.id]?.cat===cat;
+        pin.style.display=show?'':'none';
+        if(!show&&pin.dataset.id===active){pin.classList.remove('active');clearAll();active=null;document.getElementById('card').classList.remove('on');document.getElementById('darkOverlay').classList.remove('on');}
+      });
+    });
+  });
+
+  document.querySelector('[data-cat="all"]').style.background=CC.all;
+  document.querySelector('[data-cat="all"]').style.color='#0a0a0a';
+
+  document.getElementById('darkOverlay').addEventListener('click',()=>{
+    if(active){
+      document.getElementById('pin-'+active)?.classList.remove('active');
+      clearAll(); active=null;
+      document.getElementById('card').classList.remove('on');
+      document.getElementById('darkOverlay').classList.remove('on');
+    }
+  });
+
+  document.getElementById('btnFS').addEventListener('click',()=>{
+    if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();
+    else document.exitFullscreen?.();
+  });
+})();
+</script>
+
+<!-- WINDOW VIEW IFRAME -->
+<div id="windowOverlay" style="position:fixed;inset:0;z-index:1000;opacity:0;pointer-events:none;transition:opacity .35s ease;background:#000">
+  <iframe id="windowIframe" src="" allow="fullscreen; vr; xr" allowfullscreen style="width:100%;height:100%;border:none;display:block"></iframe>
+  <button id="windowClose" onclick="closeWindow()" style="position:absolute;top:16px;right:16px;width:46px;height:46px;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:50%;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;z-index:1001;transition:background .2s">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+</div>
+<script>
+function openWindow(e){e.preventDefault();document.getElementById('windowIframe').src='https://thevrcompany.in/demo/Hero-ISA7/';var o=document.getElementById('windowOverlay');o.style.opacity='1';o.style.pointerEvents='all';}
+function closeWindow(){var o=document.getElementById('windowOverlay');o.style.opacity='0';o.style.pointerEvents='none';setTimeout(function(){document.getElementById('windowIframe').src='';},350);}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeWindow();});
+</script>
+
+<!-- CONTACT POPUP -->
+<div id="contactBackdrop" onclick="closeContact()"></div>
+<div id="contactPopup">
+  <div class="cp-head">
+    <div class="cp-title">Register Your Interest</div>
+    <button class="cp-close" onclick="closeContact()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cp-sub">Tell us a few details and our team will reach out.</div>
+
+  <div id="cpForm">
+    <div class="cp-field">
+      <label class="cp-label">Full Name</label>
+      <input class="cp-input" type="text" id="cpName" placeholder="Enter your Full Name" autocomplete="off"/>
+    </div>
+    <div class="cp-field">
+      <label class="cp-label">Phone Number</label>
+      <input class="cp-input" type="tel" id="cpPhone" placeholder="Enter your Phone Number" autocomplete="off"/>
+    </div>
+    <div class="cp-field">
+      <label class="cp-label">Email</label>
+      <input class="cp-input" type="email" id="cpEmail" placeholder="Enter your Email Id" autocomplete="off"/>
+    </div>
+    <button class="cp-submit" onclick="submitContact()">Submit</button>
+  </div>
+
+  <div class="cp-success" id="cpSuccess">
+    <div class="cp-success-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3>Thank You!</h3>
+    <p>Our team will get back to you shortly.</p>
+  </div>
+</div>
+
+<script>
+function openContact() {
+  document.getElementById('contactBackdrop').classList.add('show');
+  document.getElementById('contactPopup').classList.add('show');
+  document.getElementById('cpForm').style.display = 'block';
+  document.getElementById('cpSuccess').style.display = 'none';
+}
+function closeContact() {
+  document.getElementById('contactBackdrop').classList.remove('show');
+  document.getElementById('contactPopup').classList.remove('show');
+}
+function submitContact() {
+  var name  = document.getElementById('cpName').value.trim();
+  var phone = document.getElementById('cpPhone').value.trim();
+  var email = document.getElementById('cpEmail').value.trim();
+  if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+  document.getElementById('cpForm').style.display = 'none';
+  document.getElementById('cpSuccess').style.display = 'block';
+  setTimeout(closeContact, 3000);
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeContact();
+});
+</script>
+<!-- TILT / ROTATE SCREEN OVERLAY -->
+<div id="tiltOverlay">
+  <canvas id="tiltParticles"></canvas>
+
+  <div id="tiltPhoneWrap">
+    <div class="tilt-ring"></div>
+    <div class="tilt-ring tilt-ring-2"></div>
+    <svg id="tiltPhone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 56">
+      <rect x="2" y="2" width="28" height="52" rx="4" fill="none" stroke="#c8a96e" stroke-width="2"/>
+      <rect x="6" y="7" width="20" height="34" rx="2" fill="rgba(200,169,110,0.08)" stroke="rgba(200,169,110,0.25)" stroke-width="0.8"/>
+      <circle cx="16" cy="47" r="2.5" fill="rgba(200,169,110,0.5)"/>
+      <rect x="12" y="4" width="8" height="1.5" rx="1" fill="rgba(200,169,110,0.4)"/>
+      <line x1="8" y1="15" x2="24" y2="15" stroke="rgba(200,169,110,0.2)" stroke-width="0.8"/>
+      <line x1="8" y1="19" x2="20" y2="19" stroke="rgba(200,169,110,0.15)" stroke-width="0.8"/>
+      <line x1="8" y1="23" x2="22" y2="23" stroke="rgba(200,169,110,0.15)" stroke-width="0.8"/>
+    </svg>
+  </div>
+
+  <div id="tiltTitle">Rotate Device</div>
+
+  <div id="tiltSub">
+    Turn to landscape<br>for the best experience
+  </div>
+
+  <div class="tilt-divider">
+    <div class="tilt-divider-line"></div>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+    </svg>
+    <div class="tilt-divider-line" style="background:linear-gradient(to left,transparent,rgba(200,169,110,0.6))"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var overlay  = document.getElementById('tiltOverlay');
+  var phone    = document.getElementById('tiltPhone');
+  var wrap     = document.getElementById('tiltPhoneWrap');
+  var rings    = document.querySelectorAll('.tilt-ring');
+  var title    = document.getElementById('tiltTitle');
+  var canvas   = document.getElementById('tiltParticles');
+  var ctx      = canvas.getContext('2d');
+
+  /* ── Show / hide logic ── */
+  function checkOrientation() {
+    var isPortrait = window.innerHeight > window.innerWidth;
+    var isMobile   = window.innerWidth <= 768 || window.innerHeight <= 500;
+    var shouldShow = isPortrait && isMobile;
+    if (shouldShow && !overlay.classList.contains('show')) {
+      overlay.style.opacity = '0';
+      overlay.style.transition = 'opacity .5s ease';
+      overlay.classList.add('show');
+      resizeCanvas();
+      setTimeout(function(){ overlay.style.opacity = '1'; }, 20);
+    } else if (!shouldShow && overlay.classList.contains('show')) {
+      overlay.style.opacity = '0';
+      setTimeout(function(){ overlay.classList.remove('show'); }, 500);
+    }
+  }
+  window.addEventListener('resize', checkOrientation);
+  window.addEventListener('orientationchange', function(){ setTimeout(checkOrientation, 120); });
+  checkOrientation();
+
+  /* ── Particle canvas ── */
+  function resizeCanvas() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  var PCOUNT = 40;
+  var pts = [];
+  for (var i = 0; i < PCOUNT; i++) {
+    pts.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.4 + 0.4,
+      vx: (Math.random() - .5) * 0.22,
+      vy: -Math.random() * 0.38 - 0.08,
+      life: Math.random()
+    });
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var j = 0; j < pts.length; j++) {
+      var p = pts[j];
+      p.life += 0.004;
+      if (p.life > 1) {
+        p.life = 0;
+        p.x = Math.random() * canvas.width;
+        p.y = canvas.height + 10;
+      }
+      p.x += p.vx;
+      p.y += p.vy;
+      var a = (0.45 * Math.sin(p.life * Math.PI)).toFixed(3);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(200,169,110,' + a + ')';
+      ctx.fill();
+    }
+  }
+
+  /* ── Phone animation ── */
+  var t = 0;
+  var rotAngle = 0;
+  var phase = 'idle';
+  var phaseTimer = 0;
+
+  function animate() {
+    if (!overlay.classList.contains('show')) { requestAnimationFrame(animate); return; }
+
+    t += 0.016;
+    phaseTimer += 0.016;
+
+    if (phase === 'idle' && phaseTimer > 1.4) { phase = 'tilting'; phaseTimer = 0; }
+    else if (phase === 'tilting') {
+      rotAngle += 3.0;
+      if (rotAngle >= 90) { rotAngle = 90; phase = 'landscape'; phaseTimer = 0; }
+    } else if (phase === 'landscape' && phaseTimer > 1.1) { phase = 'back'; phaseTimer = 0; }
+    else if (phase === 'back') {
+      rotAngle -= 3.0;
+      if (rotAngle <= 0) { rotAngle = 0; phase = 'idle'; phaseTimer = 0; }
+    }
+
+    /* float */
+    var floatY = (Math.sin(t * 1.8) * 4).toFixed(2);
+    phone.style.transform = 'rotate(' + rotAngle + 'deg)';
+    wrap.style.transform  = 'translateY(' + floatY + 'px)';
+
+    /* glow */
+    var glow = (0.35 + Math.sin(t * 2) * 0.15).toFixed(2);
+    var glowPx = Math.round(8 + Math.sin(t * 2) * 4);
+    phone.style.filter = 'drop-shadow(0 0 ' + glowPx + 'px rgba(200,169,110,' + glow + '))';
+
+    /* rings */
+    var s1 = (1 + Math.sin(t * 1.5) * 0.12).toFixed(3);
+    var s2 = (1 + Math.sin(t * 1.5 + 1) * 0.18).toFixed(3);
+    var o1 = (0.35 + Math.sin(t * 1.5) * 0.15).toFixed(3);
+    var o2 = (0.18 + Math.sin(t * 1.5 + 1) * 0.12).toFixed(3);
+    if (rings[0]) { rings[0].style.transform = 'scale(' + s1 + ')'; rings[0].style.opacity = o1; }
+    if (rings[1]) { rings[1].style.transform = 'scale(' + s2 + ')'; rings[1].style.opacity = o2; }
+
+    /* title shimmer */
+    title.style.opacity = (0.85 + Math.sin(t * 0.9) * 0.15).toFixed(3);
+
+    drawParticles();
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+</script>
+</body>
+</html>

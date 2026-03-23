@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Hero Homes</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@200;300;400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --off-white: #f5f2ee;
+    --accent: #c8a96e;
+    --sidebar-bg: rgba(10,10,10,0.88);
+    --sidebar-w: 88px;
+    --radius: 14px;
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: var(--black);
+    font-family: 'Jost', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    touch-action: none;
+    user-select: none;
+  }
+
+  #viewer {
+    position: fixed; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: grab;
+  }
+  #viewer.dragging { cursor: grabbing; }
+
+  /* ── LOADING SCREEN ── */
+  #loader {
+    position: fixed; inset: 0;
+    background: var(--black);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    z-index: 1000;
+    transition: opacity .6s ease, visibility .6s ease;
+  }
+  #loader.hidden { opacity: 0; visibility: hidden; }
+
+  .loader-logo {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--white);
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-weight: 300;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .loader-logo span { color: var(--accent); }
+
+  .loader-bar-wrap {
+    width: min(320px, 70vw);
+    height: 2px;
+    background: rgba(255,255,255,.12);
+    border-radius: 99px;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .loader-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #e8c98e);
+    border-radius: 99px;
+    width: 0%;
+    transition: width .15s linear;
+  }
+  .loader-pct {
+    color: rgba(255,255,255,.45);
+    font-size: .72rem;
+    font-weight: 300;
+    letter-spacing: .15em;
+  }
+
+  /* ── UI ELEMENTS (hideable) ── */
+  .ui-layer {
+    transition: opacity .35s ease, visibility .35s ease;
+  }
+  .ui-layer.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* ── TOP LEFT BRAND ── */
+  .brand {
+    position: fixed; top: 16px; left: 16px;
+    display: flex; align-items: center; gap: 8px;
+    z-index: 200;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius);
+    padding: 10px 18px;
+  }
+  .brand-icon {
+    width: 30px; height: 30px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: .82rem;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .brand-name small { display: block; font-size: .65rem; font-weight: 300; letter-spacing: .2em; opacity: .65; }
+
+  /* ── BACK BUTTON ── */
+  .btn-back {
+    position: fixed; top: 16px; left: 16px;
+    width: 46px; height: 46px;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius);
+    border: none; cursor: pointer;
+    color: var(--white);
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 200;
+    transition: background .2s;
+  }
+  .btn-back:hover { background: rgba(200,169,110,.25); }
+
+  /* ── TOP RIGHT ACTIONS ── */
+  .top-actions {
+    position: fixed; top: 16px; right: 16px;
+    display: flex; gap: 8px;
+    z-index: 200;
+  }
+  .top-actions button {
+    width: 46px; height: 46px;
+    background: var(--black);
+    border-radius: 50%;
+    border: none; cursor: pointer;
+    color: var(--white);
+    font-size: 17px;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s, transform .15s;
+  }
+  .top-actions button:hover { background: #222; transform: scale(1.05); }
+
+  /* ── DAY / EVENING TOGGLE ── */
+  #timeToggle {
+    position: fixed;
+    top: 16px; left: 50%; transform: translateX(-50%);
+    z-index: 300;
+    display: flex; align-items: center;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 40px;
+    border: 1px solid rgba(255,255,255,.1);
+    padding: 5px;
+    gap: 2px;
+  }
+
+  .time-btn {
+    display: flex; align-items: center; gap: 7px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: none;
+    background: none;
+    color: rgba(255,255,255,.45);
+    font-family: 'Jost', sans-serif;
+    font-size: .72rem;
+    font-weight: 400;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .22s ease, color .22s ease;
+    white-space: nowrap;
+  }
+  .time-btn svg {
+    width: 15px; height: 15px;
+    flex-shrink: 0;
+    transition: stroke .22s ease;
+  }
+  .time-btn:hover {
+    color: rgba(255,255,255,.75);
+  }
+  .time-btn.active {
+    background: rgba(255,255,255,.1);
+    color: var(--white);
+  }
+  .time-btn.active svg {
+    stroke: var(--accent);
+  }
+
+  /* thin divider between the two buttons */
+  .time-divider {
+    width: 1px; height: 18px;
+    background: rgba(255,255,255,.12);
+    flex-shrink: 0;
+  }
+
+  /* ── TOGGLE UI BUTTON (always visible) ── */
+  #btnToggleUI {
+    position: fixed; bottom: 28px; right: 16px;
+    width: 46px; height: 46px;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.12);
+    cursor: pointer;
+    color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 500;
+    transition: background .2s, transform .2s;
+  }
+  #btnToggleUI:hover { background: rgba(200,169,110,.25); transform: scale(1.05); }
+  #btnToggleUI svg { transition: opacity .2s; }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: fixed; left: 16px; top: 50%;
+    transform: translateY(-50%);
+    width: var(--sidebar-w);
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.06);
+    z-index: 200;
+    padding: 8px 0;
+    display: flex; flex-direction: column;
+  }
+
+  .nav-item {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 5px;
+    padding: 14px 6px;
+    color: rgba(255,255,255,.55);
+    cursor: pointer;
+    transition: color .2s, background .2s;
+    border-radius: 14px;
+    margin: 2px 6px;
+    text-decoration: none;
+  }
+  .nav-item:hover { color: var(--white); background: rgba(255,255,255,.07); }
+  .nav-item.active { color: var(--white); background: rgba(255,255,255,.1); }
+  .nav-item svg { width: 20px; height: 20px; stroke-width: 1.6; }
+  .nav-item span {
+    font-size: .6rem;
+    font-weight: 400;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  /* ── BOTTOM SCRUBBER ── */
+  .scrubber-wrap {
+    position: fixed; bottom: 28px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; align-items: center; gap: 14px;
+    z-index: 200;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 40px;
+    padding: 10px 18px;
+  }
+
+  .play-btn {
+    width: 38px; height: 38px;
+    background: var(--black);
+    border-radius: 50%;
+    border: none; cursor: pointer;
+    color: var(--white);
+    font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background .2s;
+  }
+  .play-btn:hover { background: #1a1a1a; }
+
+  .scrubber-track {
+    width: clamp(160px, 35vw, 400px);
+    height: 4px;
+    background: rgba(255,255,255,.2);
+    border-radius: 99px;
+    position: relative;
+    cursor: pointer;
+  }
+  .scrubber-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #e8c98e);
+    border-radius: 99px;
+    pointer-events: none;
+    transition: width .05s linear;
+  }
+  .scrubber-thumb {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 14px; height: 14px;
+    background: var(--white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(255,255,255,.25);
+    pointer-events: none;
+    transition: left .05s linear;
+  }
+
+  /* ── FRAME COUNTER ── */
+  .frame-counter {
+    position: fixed; bottom: 80px; right: 20px;
+    color: rgba(255,255,255,.3);
+    font-size: .65rem;
+    letter-spacing: .12em;
+    z-index: 200;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+  }
+
+  /* ── HINT ── */
+  .hint {
+    position: fixed; bottom: 80px; left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,.4);
+    font-size: .7rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    z-index: 200;
+    display: flex; align-items: center; gap: 8px;
+    transition: opacity 1s ease;
+  }
+  .hint svg { width: 18px; height: 18px; opacity: .5; }
+  .hint.hidden { opacity: 0; pointer-events: none; }
+
+  @media (max-width: 600px) {
+    :root { --sidebar-w: 70px; }
+    .brand { display: none; }
+    .nav-item span { font-size: .52rem; }
+    .scrubber-track { width: 38vw; }
+    .frame-counter { font-size: .6rem; }
+    .time-btn span { display: none; }
+    .time-btn { padding: 8px 12px; }
+  }
+
+  .tooltip {
+    position: fixed;
+    background: rgba(10,10,10,.9);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: .72rem;
+    letter-spacing: .06em;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .2s;
+    z-index: 300;
+    white-space: nowrap;
+  }
+
+  /* WINDOW VIEW IFRAME OVERLAY */
+  #windowOverlay {
+    position: fixed; inset: 0;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+    background: #000;
+  }
+  #windowOverlay.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+  #windowIframe {
+    width: 100%; height: 100%;
+    border: none;
+    display: block;
+  }
+  #windowClose {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 46px; height: 46px;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1001;
+    transition: background .2s;
+  }
+  #windowClose:hover { background: rgba(200,169,110,.35); }
+
+  /* ── CONTACT POPUP ── */
+  #contactBackdrop {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 800;
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s ease;
+  }
+  #contactBackdrop.show { opacity: 1; pointer-events: all; }
+
+  #contactPopup {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -48%) scale(.96);
+    z-index: 900;
+    width: min(480px, calc(100vw - 40px));
+    background: rgba(10,10,10,.97);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px;
+    padding: 32px 28px 28px;
+    box-shadow: 0 32px 80px rgba(0,0,0,.8);
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s ease, transform .3s cubic-bezier(.25,.46,.45,.94);
+  }
+  #contactPopup.show {
+    opacity: 1; pointer-events: all;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .cp-head {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; margin-bottom: 6px;
+  }
+  .cp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 500;
+    color: #fff; letter-spacing: .02em; line-height: 1.2;
+  }
+  .cp-close {
+    width: 32px; height: 32px; flex-shrink: 0;
+    background: rgba(255,255,255,.08);
+    border: none; border-radius: 50%; cursor: pointer;
+    color: rgba(255,255,255,.6);
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s, color .2s; margin-top: 2px;
+  }
+  .cp-close:hover { background: rgba(255,255,255,.15); color: #fff; }
+  .cp-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: .78rem; color: rgba(255,255,255,.45);
+    letter-spacing: .02em; margin-bottom: 24px;
+  }
+
+  .cp-field { margin-bottom: 16px; }
+  .cp-label {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: .72rem; font-weight: 500;
+    color: rgba(255,255,255,.7);
+    letter-spacing: .06em; text-transform: uppercase;
+    margin-bottom: 7px;
+  }
+  .cp-input {
+    width: 100%; padding: 13px 16px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Jost', sans-serif; font-size: .88rem;
+    outline: none;
+    transition: border-color .2s, background .2s;
+    -webkit-appearance: none;
+  }
+  .cp-input::placeholder { color: rgba(255,255,255,.25); }
+  .cp-input:focus {
+    border-color: rgba(200,169,110,.5);
+    background: rgba(255,255,255,.08);
+  }
+
+  .cp-submit {
+    width: 100%; padding: 14px;
+    margin-top: 8px;
+    background: #fff;
+    border: none; border-radius: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: .88rem; font-weight: 500;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: #0a0a0a; cursor: pointer;
+    transition: background .2s, transform .15s;
+  }
+  .cp-submit:hover { background: #e8c98e; transform: scale(1.01); }
+  .cp-submit:active { transform: scale(.99); }
+
+  .cp-success {
+    text-align: center; padding: 16px 0 8px;
+    display: none;
+  }
+  .cp-success-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(200,169,110,.15);
+    border: 1px solid rgba(200,169,110,.3);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+  }
+  .cp-success-icon svg { stroke: #c8a96e; }
+  .cp-success h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: #fff; margin-bottom: 6px;
+  }
+  .cp-success p {
+    font-family: 'Jost', sans-serif;
+    font-size: .76rem; color: rgba(255,255,255,.45);
+  }
+
+  @media (max-width: 600px) {
+    #contactPopup { padding: 24px 20px 20px; border-radius: 16px; }
+    .cp-title { font-size: 1.3rem; }
+  }
+
+  /* ── MOBILE LANDSCAPE ── */
+  @media (max-height: 500px) and (orientation: landscape) {
+    :root { --sidebar-w: 56px; }
+
+    /* Brand hidden — no room */
+    .brand { display: none; }
+
+    /* Back button — compact */
+    .btn-back {
+      top: 8px; left: 8px;
+      width: 34px; height: 34px;
+      border-radius: 10px;
+    }
+    .btn-back svg { width: 16px; height: 16px; }
+
+    /* Top toggle — tight */
+    #timeToggle { top: 8px; padding: 3px; gap: 1px; }
+    .time-btn { padding: 5px 8px; gap: 5px; }
+    .time-btn span { display: none; }
+    .time-btn svg { width: 13px; height: 13px; }
+    .time-divider { height: 14px; }
+
+    /* Top-right actions — smaller */
+    .top-actions { top: 8px; right: 8px; gap: 5px; }
+    .top-actions button { width: 34px; height: 34px; }
+
+    /* Left sidebar — compact */
+    .sidebar {
+      left: 8px;
+      width: var(--sidebar-w);
+      border-radius: 13px;
+      padding: 3px 0;
+    }
+    .nav-item {
+      padding: 6px 3px;
+      gap: 2px;
+      margin: 1px 3px;
+      border-radius: 9px;
+    }
+    .nav-item svg { width: 14px; height: 14px; }
+    .nav-item span { font-size: .44rem; letter-spacing: .04em; }
+
+    /* Scrubber — slimmer, tighter to bottom */
+    .scrubber-wrap {
+      bottom: 8px;
+      padding: 7px 12px;
+      gap: 9px;
+      border-radius: 30px;
+    }
+    .play-btn { width: 28px; height: 28px; }
+    .play-btn svg { width: 12px; height: 12px; }
+    .scrubber-track { width: clamp(100px, 32vw, 260px); height: 3px; }
+    .scrubber-thumb { width: 10px; height: 10px; }
+
+    /* Frame counter — move up from bottom */
+    .frame-counter {
+      bottom: 52px;
+      right: 14px;
+      font-size: .56rem;
+    }
+
+    /* Hint — stay above scrubber */
+    .hint {
+      bottom: 52px;
+      font-size: .6rem;
+    }
+    .hint svg { width: 14px; height: 14px; }
+
+    /* Toggle UI button */
+    #btnToggleUI {
+      bottom: 8px; right: 8px;
+      width: 34px; height: 34px;
+    }
+    #btnToggleUI svg { width: 16px; height: 16px; }
+
+    /* Contact popup — horizontal scroll-friendly */
+    #contactPopup {
+      width: min(90vw, 480px);
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 18px 16px 16px;
+      border-radius: 14px;
+    }
+    .cp-title { font-size: 1.1rem; }
+    .cp-sub { font-size: .72rem; margin-bottom: 14px; }
+    .cp-field { margin-bottom: 10px; }
+    .cp-input { padding: 9px 12px; font-size: .82rem; }
+    .cp-submit { padding: 10px; font-size: .82rem; }
+  }
+
+
+/* ── TILT / ROTATE SCREEN OVERLAY ── */
+#tiltOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0a0a0a;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  text-align: center;
+  padding: 24px;
+  overflow: hidden;
+}
+#tiltOverlay.show { display: flex; }
+
+#tiltParticles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#tiltPhoneWrap {
+  position: relative;
+  margin-bottom: 32px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tilt-ring {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(200,169,110,0.35);
+  pointer-events: none;
+}
+.tilt-ring-2 {
+  border-color: rgba(200,169,110,0.18);
+}
+
+#tiltPhone {
+  width: 32px;
+  height: 56px;
+  filter: drop-shadow(0 0 10px rgba(200,169,110,0.5));
+}
+
+#tiltTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+#tiltSub {
+  font-family: 'Jost', sans-serif;
+  font-size: .7rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.tilt-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: .55;
+}
+.tilt-divider-line {
+  width: 28px;
+  height: 1px;
+  background: rgba(200,169,110,0.6);
+}
+</style>
+</head>
+<body>
+
+<canvas id="viewer"></canvas>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Hero<span>Reality</span></div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+  <div class="loader-pct" id="loaderPct">0%</div>
+</div>
+
+<!-- BACK BUTTON -->
+
+
+<!-- BRAND -->
+<div class="brand ui-layer" style="padding:6px 10px">
+  <img src="palatial-project-logo.png" alt="The Palatial" style="height:52px;width:auto;display:block;object-fit:contain"/>
+</div>
+
+<!-- DAY / EVENING TOGGLE -->
+<div id="timeToggle" class="ui-layer">
+  <button class="time-btn active" id="btnDay" title="Day view">
+    <!-- Sun icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+    <span>Day</span>
+  </button>
+  <div class="time-divider"></div>
+  <button class="time-btn" id="btnEvening" title="Evening view">
+    <!-- Moon icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+    <span>Evening</span>
+  </button>
+</div>
+
+<!-- TOP RIGHT ACTIONS -->
+<div class="top-actions ui-layer">
+  <button title="Fullscreen" id="btnFullscreen">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+  </button>
+  <button title="Contact" onclick="openContact()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3-8.58A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14A16 16 0 0015.86 17.09l1.41-1.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </button>
+  <button title="Wishlist">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+  </button>
+  <button title="More">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+  </button>
+</div>
+
+<!-- SIDEBAR NAV -->
+<nav class="sidebar ui-layer">
+  <a class="nav-item active" href="index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="nav-item" href="location.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <span>Location</span>
+  </a>
+  <a class="nav-item" href="inventory.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    <span>Inventory</span>
+  </a>
+  <a class="nav-item"  href="windowview.html" >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="2" width="18" height="17" rx="1.5"/>
+      <line x1="1" y1="19" x2="23" y2="19"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+      <line x1="12" y1="2" x2="12" y2="19"/>
+    </svg>
+    <span style="text-align:center;line-height:1.3">WINDOW<br>VIEW</span>
+  </a>
+  <a class="nav-item" href="hero-homes.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <span>Gallery</span>
+  </a>
+</nav>
+
+<!-- HINT -->
+<div class="hint ui-layer" id="hint">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  Drag or scroll to rotate
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="transform:scaleX(-1)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</div>
+
+<!-- FRAME COUNTER -->
+<div class="frame-counter ui-layer" id="frameCounter">001 / 120</div>
+
+<!-- SCRUBBER -->
+<div class="scrubber-wrap ui-layer">
+  <button class="play-btn" id="playBtn">
+    <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+  </button>
+  <div class="scrubber-track" id="scrubberTrack">
+    <div class="scrubber-fill" id="scrubberFill" style="width:0%"></div>
+    <div class="scrubber-thumb" id="scrubberThumb" style="left:0%"></div>
+  </div>
+</div>
+
+<!-- TOGGLE UI BUTTON (always visible) -->
+<button id="btnToggleUI" title="Toggle UI">
+  <svg id="iconEye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+    <circle cx="12" cy="12" r="3"/>
+  </svg>
+  <svg id="iconEyeOff" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+    <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/>
+    <line x1="1" y1="1" x2="23" y2="23"/>
+  </svg>
+</button>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+(() => {
+  /* ── SEQUENCE CONFIGS ── */
+  const SEQUENCES = {
+    day: {
+      total: 120,
+      path: i => `buildingimages/image.${String(i).padStart(5,'0')}.webp`
+    },
+    evening: {
+      total: 60,
+      path: i => `buildingimageseveningwebp/image.${String(i).padStart(5,'0')}.webp`
+    }
+  };
+
+  const PRELOAD_AHEAD   = 8;
+  const DRAG_SENSITIVITY  = 2.8;
+  const TOUCH_SENSITIVITY = 2.2;
+
+  /* Per-sequence frame caches */
+  const frameCache = { day: [], evening: [] };
+  frameCache.day     = new Array(SEQUENCES.day.total).fill(null);
+  frameCache.evening = new Array(SEQUENCES.evening.total).fill(null);
+
+  const loadedCount = { day: 0, evening: 0 };
+  const earlyReady  = { day: false, evening: false };
+
+  let currentMode  = 'day';
+  let currentFrame = 0;
+  let isPlaying    = false;
+  let playTimer    = null;
+  let interacted   = false;
+  let uiVisible    = true;
+
+  /* ── DOM REFS ── */
+  const canvas     = document.getElementById('viewer');
+  const ctx        = canvas.getContext('2d', { alpha: false });
+  const loader     = document.getElementById('loader');
+  const loaderBar  = document.getElementById('loaderBar');
+  const loaderPct  = document.getElementById('loaderPct');
+  const counter    = document.getElementById('frameCounter');
+  const fill       = document.getElementById('scrubberFill');
+  const thumb      = document.getElementById('scrubberThumb');
+  const track      = document.getElementById('scrubberTrack');
+  const playBtn    = document.getElementById('playBtn');
+  const playIcon   = document.getElementById('playIcon');
+  const hint       = document.getElementById('hint');
+  const btnToggle  = document.getElementById('btnToggleUI');
+  const iconEye    = document.getElementById('iconEye');
+  const iconEyeOff = document.getElementById('iconEyeOff');
+  const uiEls      = document.querySelectorAll('.ui-layer');
+  const btnDay     = document.getElementById('btnDay');
+  const btnEvening = document.getElementById('btnEvening');
+
+  /* ── HELPERS ── */
+  function seqTotal() { return SEQUENCES[currentMode].total; }
+  function frames()   { return frameCache[currentMode]; }
+
+  /* ── TOGGLE UI ── */
+  btnToggle.addEventListener('click', () => {
+    uiVisible = !uiVisible;
+    uiEls.forEach(el => el.classList.toggle('hidden', !uiVisible));
+    iconEye.style.display    = uiVisible ? 'block' : 'none';
+    iconEyeOff.style.display = uiVisible ? 'none'  : 'block';
+  });
+
+  /* ── CANVAS RESIZE ── */
+  function resize() {
+    canvas.width  = window.innerWidth  * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+    canvas.style.width  = window.innerWidth  + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    drawFrame(currentFrame);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  /* ── DRAW ── */
+  function drawFrame(idx) {
+    const img = frames()[idx];
+    if (!img) return;
+    const total = seqTotal();
+    const cw = canvas.width, ch = canvas.height;
+    const iw = img.naturalWidth, ih = img.naturalHeight;
+    const scale = Math.max(cw/iw, ch/ih);
+    const dw = iw*scale, dh = ih*scale;
+    const dx = (cw-dw)/2, dy = (ch-dh)/2;
+    ctx.drawImage(img, dx, dy, dw, dh);
+    counter.textContent = `${String(idx+1).padStart(3,'0')} / ${total}`;
+    const pct = idx / (total - 1) * 100;
+    fill.style.width = pct + '%';
+    thumb.style.left = `calc(${pct}% - 7px)`;
+  }
+
+  function setFrame(idx) {
+    const total = seqTotal();
+    idx = ((idx % total) + total) % total;
+    if (idx === currentFrame && frames()[idx]) return;
+    currentFrame = idx;
+    if (frames()[idx]) drawFrame(idx);
+    preloadAhead(idx);
+  }
+
+  function preloadAhead(idx) {
+    const total = seqTotal();
+    for (let i = 1; i <= PRELOAD_AHEAD; i++) {
+      const ni = (idx + i) % total;
+      if (!frames()[ni]) loadImage(currentMode, ni);
+    }
+  }
+
+  /* ── LOAD IMAGES ── */
+  function loadImage(mode, i) {
+    if (frameCache[mode][i]) return frameCache[mode][i];
+    const img = new Image();
+    img.src = SEQUENCES[mode].path(i);
+    img.onload = () => {
+      frameCache[mode][i] = img;
+      loadedCount[mode]++;
+      /* Update progress bar only for day (initial load) */
+      if (mode === 'day') {
+        const pct = Math.round(loadedCount.day / SEQUENCES.day.total * 100);
+        loaderBar.style.width = pct + '%';
+        loaderPct.textContent = pct + '%';
+      }
+      /* Show first frame as soon as 10 day frames are ready */
+      if (mode === 'day' && !earlyReady.day && loadedCount.day >= 10) {
+        earlyReady.day = true;
+        loader.classList.add('hidden');
+        if (currentMode === 'day') drawFrame(currentFrame);
+      }
+      /* If this frame is currently displayed, redraw */
+      if (mode === currentMode && i === currentFrame) drawFrame(i);
+    };
+    img.onerror = () => { loadedCount[mode]++; };
+    return img;
+  }
+
+  /* Start loading day immediately; evening loads lazily in background */
+  function startLoading() {
+    for (let i = 0; i < SEQUENCES.day.total; i++)     loadImage('day', i);
+    for (let i = 0; i < SEQUENCES.evening.total; i++) loadImage('evening', i);
+  }
+  startLoading();
+
+  /* ── DAY / EVENING SWITCH ── */
+  function switchMode(mode) {
+    if (mode === currentMode) return;
+    stopPlay();
+    currentMode = mode;
+
+    /* Map current frame proportionally to new sequence length */
+    const prevTotal = mode === 'day' ? SEQUENCES.evening.total : SEQUENCES.day.total;
+    const newTotal  = seqTotal();
+    currentFrame = Math.round((currentFrame / (prevTotal - 1)) * (newTotal - 1));
+    currentFrame = Math.max(0, Math.min(newTotal - 1, currentFrame));
+
+    btnDay.classList.toggle('active',     mode === 'day');
+    btnEvening.classList.toggle('active', mode === 'evening');
+
+    drawFrame(currentFrame);
+    preloadAhead(currentFrame);
+  }
+
+  btnDay.addEventListener('click',     () => switchMode('day'));
+  btnEvening.addEventListener('click', () => switchMode('evening'));
+
+  /* ── DRAG ── */
+  let dragStart = null, dragFrame = 0;
+
+  canvas.addEventListener('mousedown', e => {
+    dragStart = e.clientX; dragFrame = currentFrame;
+    canvas.classList.add('dragging');
+    hideHint(); stopPlay();
+  });
+  window.addEventListener('mousemove', e => {
+    if (dragStart === null) return;
+    setFrame(Math.round(dragFrame + (e.clientX - dragStart) / DRAG_SENSITIVITY));
+  });
+  window.addEventListener('mouseup', () => { dragStart = null; canvas.classList.remove('dragging'); });
+
+  /* ── TOUCH ── */
+  let touchStart = null, touchFrame = 0;
+
+  function isTouchOnUI(e) {
+    const t = e.touches[0];
+    // Temporarily hide canvas to find real element underneath
+    canvas.style.pointerEvents = 'none';
+    const el = document.elementFromPoint(t.clientX, t.clientY);
+    canvas.style.pointerEvents = '';
+    return el && el.closest('.ui-layer, #btnToggleUI, button, a, input');
+  }
+
+  canvas.addEventListener('touchstart', e => {
+    if (isTouchOnUI(e)) return;
+    e.preventDefault();
+    touchStart = e.touches[0].clientX; touchFrame = currentFrame;
+    hideHint(); stopPlay();
+  }, { passive: false });
+  canvas.addEventListener('touchmove', e => {
+    if (touchStart === null) return;
+    e.preventDefault();
+    setFrame(Math.round(touchFrame + (e.touches[0].clientX - touchStart) / TOUCH_SENSITIVITY));
+  }, { passive: false });
+  canvas.addEventListener('touchend', () => { touchStart = null; });
+
+  /* ── WHEEL ── */
+  canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    setFrame(currentFrame + Math.sign(e.deltaX || e.deltaY));
+    hideHint(); stopPlay();
+  }, { passive: false });
+
+  /* ── KEYBOARD ── */
+  window.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { setFrame(currentFrame + 1); hideHint(); }
+    if (e.key === 'ArrowLeft')  { setFrame(currentFrame - 1); hideHint(); }
+    if (e.key === ' ') { e.preventDefault(); togglePlay(); }
+    if (e.key === 'h' || e.key === 'H') btnToggle.click();
+    if (e.key === 'd' || e.key === 'D') switchMode('day');
+    if (e.key === 'e' || e.key === 'E') switchMode('evening');
+  });
+
+  /* ── SCRUBBER ── */
+  let scrubbing = false;
+  function scrubTo(x) {
+    const rect = track.getBoundingClientRect();
+    setFrame(Math.round(Math.max(0, Math.min(1, (x - rect.left) / rect.width)) * (seqTotal() - 1)));
+  }
+  track.addEventListener('mousedown', e => { scrubbing = true; scrubTo(e.clientX); stopPlay(); });
+  window.addEventListener('mousemove', e => { if (scrubbing) scrubTo(e.clientX); });
+  window.addEventListener('mouseup', () => { scrubbing = false; });
+  track.addEventListener('touchstart', e => { scrubbing = true; scrubTo(e.touches[0].clientX); stopPlay(); }, { passive: true });
+  window.addEventListener('touchmove', e => { if (scrubbing) scrubTo(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchend', () => { scrubbing = false; });
+
+  /* ── PLAY ── */
+  function togglePlay() { isPlaying ? stopPlay() : startPlay(); }
+  function startPlay() {
+    isPlaying = true;
+    playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+    playTimer = setInterval(() => setFrame(currentFrame + 1), 60);
+    hideHint();
+  }
+  function stopPlay() {
+    if (!isPlaying) return;
+    isPlaying = false;
+    playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+    clearInterval(playTimer);
+  }
+  playBtn.addEventListener('click', togglePlay);
+
+  /* ── FULLSCREEN ── */
+  document.getElementById('btnFullscreen').addEventListener('click', () => {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+    else document.exitFullscreen?.();
+  });
+
+  /* ── HINT ── */
+  function hideHint() {
+    if (interacted) return;
+    interacted = true;
+    hint.classList.add('hidden');
+  }
+  setTimeout(hideHint, 4000);
+})();
+</script>
+<!-- WINDOW VIEW IFRAME -->
+<div id="windowOverlay">
+  <iframe id="windowIframe" src="" allow="fullscreen; vr; xr" allowfullscreen></iframe>
+  <button id="windowClose" onclick="closeWindow()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+</div>
+
+<script>
+function openWindow(e) {
+  e.preventDefault();
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('navWindow').classList.add('active');
+  const overlay = document.getElementById('windowOverlay');
+  document.getElementById('windowIframe').src = 'https://thevrcompany.in/demo/Hero-ISA7/';
+  overlay.classList.add('show');
+}
+function closeWindow() {
+  const overlay = document.getElementById('windowOverlay');
+  overlay.classList.remove('show');
+  setTimeout(() => { document.getElementById('windowIframe').src = ''; }, 350);
+  // Restore home as active
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.querySelector('.nav-item').classList.add('active');
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeWindow();
+});
+</script>
+
+<!-- CONTACT POPUP -->
+<div id="contactBackdrop" onclick="closeContact()"></div>
+<div id="contactPopup">
+  <div class="cp-head">
+    <div class="cp-title">Register Your Interest</div>
+    <button class="cp-close" onclick="closeContact()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cp-sub">Tell us a few details and our team will reach out.</div>
+
+  <div id="cpForm">
+    <div class="cp-field">
+      <label class="cp-label">Full Name</label>
+      <input class="cp-input" type="text" id="cpName" placeholder="Enter your Full Name" autocomplete="off"/>
+    </div>
+    <div class="cp-field">
+      <label class="cp-label">Phone Number</label>
+      <input class="cp-input" type="tel" id="cpPhone" placeholder="Enter your Phone Number" autocomplete="off"/>
+    </div>
+    <div class="cp-field">
+      <label class="cp-label">Email</label>
+      <input class="cp-input" type="email" id="cpEmail" placeholder="Enter your Email Id" autocomplete="off"/>
+    </div>
+    <button class="cp-submit" onclick="submitContact()">Submit</button>
+  </div>
+
+  <div class="cp-success" id="cpSuccess">
+    <div class="cp-success-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3>Thank You!</h3>
+    <p>Our team will get back to you shortly.</p>
+  </div>
+</div>
+
+<script>
+function openContact() {
+  document.getElementById('contactBackdrop').classList.add('show');
+  document.getElementById('contactPopup').classList.add('show');
+  document.getElementById('cpForm').style.display = 'block';
+  document.getElementById('cpSuccess').style.display = 'none';
+}
+function closeContact() {
+  document.getElementById('contactBackdrop').classList.remove('show');
+  document.getElementById('contactPopup').classList.remove('show');
+}
+function submitContact() {
+  var name  = document.getElementById('cpName').value.trim();
+  var phone = document.getElementById('cpPhone').value.trim();
+  var email = document.getElementById('cpEmail').value.trim();
+  if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+  document.getElementById('cpForm').style.display = 'none';
+  document.getElementById('cpSuccess').style.display = 'block';
+  setTimeout(closeContact, 3000);
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeContact();
+});
+</script>
+<!-- TILT / ROTATE SCREEN OVERLAY -->
+<div id="tiltOverlay">
+  <canvas id="tiltParticles"></canvas>
+
+  <div id="tiltPhoneWrap">
+    <div class="tilt-ring"></div>
+    <div class="tilt-ring tilt-ring-2"></div>
+    <svg id="tiltPhone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 56">
+      <rect x="2" y="2" width="28" height="52" rx="4" fill="none" stroke="#c8a96e" stroke-width="2"/>
+      <rect x="6" y="7" width="20" height="34" rx="2" fill="rgba(200,169,110,0.08)" stroke="rgba(200,169,110,0.25)" stroke-width="0.8"/>
+      <circle cx="16" cy="47" r="2.5" fill="rgba(200,169,110,0.5)"/>
+      <rect x="12" y="4" width="8" height="1.5" rx="1" fill="rgba(200,169,110,0.4)"/>
+      <line x1="8" y1="15" x2="24" y2="15" stroke="rgba(200,169,110,0.2)" stroke-width="0.8"/>
+      <line x1="8" y1="19" x2="20" y2="19" stroke="rgba(200,169,110,0.15)" stroke-width="0.8"/>
+      <line x1="8" y1="23" x2="22" y2="23" stroke="rgba(200,169,110,0.15)" stroke-width="0.8"/>
+    </svg>
+  </div>
+
+  <div id="tiltTitle">Rotate Device</div>
+
+  <div id="tiltSub">
+    Turn to landscape<br>for the best experience
+  </div>
+
+  <div class="tilt-divider">
+    <div class="tilt-divider-line"></div>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+    </svg>
+    <div class="tilt-divider-line" style="background:linear-gradient(to left,transparent,rgba(200,169,110,0.6))"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var overlay  = document.getElementById('tiltOverlay');
+  var phone    = document.getElementById('tiltPhone');
+  var wrap     = document.getElementById('tiltPhoneWrap');
+  var rings    = document.querySelectorAll('.tilt-ring');
+  var title    = document.getElementById('tiltTitle');
+  var canvas   = document.getElementById('tiltParticles');
+  var ctx      = canvas.getContext('2d');
+
+  /* ── Show / hide logic ── */
+  function checkOrientation() {
+    var isPortrait = window.innerHeight > window.innerWidth;
+    var isMobile   = window.innerWidth <= 768 || window.innerHeight <= 500;
+    var shouldShow = isPortrait && isMobile;
+    if (shouldShow && !overlay.classList.contains('show')) {
+      overlay.style.opacity = '0';
+      overlay.style.transition = 'opacity .5s ease';
+      overlay.classList.add('show');
+      resizeCanvas();
+      setTimeout(function(){ overlay.style.opacity = '1'; }, 20);
+    } else if (!shouldShow && overlay.classList.contains('show')) {
+      overlay.style.opacity = '0';
+      setTimeout(function(){ overlay.classList.remove('show'); }, 500);
+    }
+  }
+  window.addEventListener('resize', checkOrientation);
+  window.addEventListener('orientationchange', function(){ setTimeout(checkOrientation, 120); });
+  checkOrientation();
+
+  /* ── Particle canvas ── */
+  function resizeCanvas() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  var PCOUNT = 40;
+  var pts = [];
+  for (var i = 0; i < PCOUNT; i++) {
+    pts.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.4 + 0.4,
+      vx: (Math.random() - .5) * 0.22,
+      vy: -Math.random() * 0.38 - 0.08,
+      life: Math.random()
+    });
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var j = 0; j < pts.length; j++) {
+      var p = pts[j];
+      p.life += 0.004;
+      if (p.life > 1) {
+        p.life = 0;
+        p.x = Math.random() * canvas.width;
+        p.y = canvas.height + 10;
+      }
+      p.x += p.vx;
+      p.y += p.vy;
+      var a = (0.45 * Math.sin(p.life * Math.PI)).toFixed(3);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(200,169,110,' + a + ')';
+      ctx.fill();
+    }
+  }
+
+  /* ── Phone animation ── */
+  var t = 0;
+  var rotAngle = 0;
+  var phase = 'idle';
+  var phaseTimer = 0;
+
+  function animate() {
+    if (!overlay.classList.contains('show')) { requestAnimationFrame(animate); return; }
+
+    t += 0.016;
+    phaseTimer += 0.016;
+
+    if (phase === 'idle' && phaseTimer > 1.4) { phase = 'tilting'; phaseTimer = 0; }
+    else if (phase === 'tilting') {
+      rotAngle += 3.0;
+      if (rotAngle >= 90) { rotAngle = 90; phase = 'landscape'; phaseTimer = 0; }
+    } else if (phase === 'landscape' && phaseTimer > 1.1) { phase = 'back'; phaseTimer = 0; }
+    else if (phase === 'back') {
+      rotAngle -= 3.0;
+      if (rotAngle <= 0) { rotAngle = 0; phase = 'idle'; phaseTimer = 0; }
+    }
+
+    /* float */
+    var floatY = (Math.sin(t * 1.8) * 4).toFixed(2);
+    phone.style.transform = 'rotate(' + rotAngle + 'deg)';
+    wrap.style.transform  = 'translateY(' + floatY + 'px)';
+
+    /* glow */
+    var glow = (0.35 + Math.sin(t * 2) * 0.15).toFixed(2);
+    var glowPx = Math.round(8 + Math.sin(t * 2) * 4);
+    phone.style.filter = 'drop-shadow(0 0 ' + glowPx + 'px rgba(200,169,110,' + glow + '))';
+
+    /* rings */
+    var s1 = (1 + Math.sin(t * 1.5) * 0.12).toFixed(3);
+    var s2 = (1 + Math.sin(t * 1.5 + 1) * 0.18).toFixed(3);
+    var o1 = (0.35 + Math.sin(t * 1.5) * 0.15).toFixed(3);
+    var o2 = (0.18 + Math.sin(t * 1.5 + 1) * 0.12).toFixed(3);
+    if (rings[0]) { rings[0].style.transform = 'scale(' + s1 + ')'; rings[0].style.opacity = o1; }
+    if (rings[1]) { rings[1].style.transform = 'scale(' + s2 + ')'; rings[1].style.opacity = o2; }
+
+    /* title shimmer */
+    title.style.opacity = (0.85 + Math.sin(t * 0.9) * 0.15).toFixed(3);
+
+    drawParticles();
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+</script>
+</body>
+</html>

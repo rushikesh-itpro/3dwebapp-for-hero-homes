@@ -1,0 +1,6014 @@
+{
+  "towers": {
+    "left": {
+      "label": "Left Tower",
+      "floors": {
+        "10": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "1001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1002",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1003",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1004",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1002",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1003",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1004",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1001",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1002",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1003",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1004",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.2 Cr"
+            }
+          ]
+        },
+        "11": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "1101",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1102",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1103",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹5.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1104",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1101",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1102",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1103",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1104",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1101",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1102",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1103",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1104",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.3 Cr"
+            }
+          ]
+        },
+        "12": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "1201",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1202",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1203",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1204",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1201",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1202",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1203",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1204",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1201",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1202",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1203",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1204",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.4 Cr"
+            }
+          ]
+        },
+        "13": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "1301",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1302",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1303",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹5.8 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1304",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1301",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1302",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1303",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1304",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1301",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1302",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1303",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1304",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.4 Cr"
+            }
+          ]
+        },
+        "14": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "1401",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1402",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.6 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1403",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1404",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1401",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1402",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1403",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1404",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1401",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1402",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1403",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1404",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.5 Cr"
+            }
+          ]
+        },
+        "15": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "1501",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1502",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1503",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1504",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹6.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1501",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1502",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1503",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1504",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1501",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1502",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1503",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1504",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.6 Cr"
+            }
+          ]
+        },
+        "16": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "1601",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1602",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1603",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1604",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1601",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1602",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1603",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1604",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1601",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1602",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1603",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1604",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.7 Cr"
+            }
+          ]
+        },
+        "17": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "1701",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1702",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1703",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1704",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1701",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1702",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1703",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1704",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1701",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1702",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1703",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1704",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.8 Cr"
+            }
+          ]
+        },
+        "18": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "1801",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1802",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1803",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹6.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1804",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1801",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1802",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1803",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1804",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1801",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1802",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1803",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1804",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.8 Cr"
+            }
+          ]
+        },
+        "19": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "1901",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1902",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1903",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "1904",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1901",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1902",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1903",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1904",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1901",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1902",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1903",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1904",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.9 Cr"
+            }
+          ]
+        },
+        "20": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "2001",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2002",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2003",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2004",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹7.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2002",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2003",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2004",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2001",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2002",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2003",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2004",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.0 Cr"
+            }
+          ]
+        },
+        "21": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "2101",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2102",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2103",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2104",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2101",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2102",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2103",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2104",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2101",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2102",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2103",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2104",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.1 Cr"
+            }
+          ]
+        },
+        "22": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "2201",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2202",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2203",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2204",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2201",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2202",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2203",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2204",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2201",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2202",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2203",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2204",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.2 Cr"
+            }
+          ]
+        },
+        "23": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "2301",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2302",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2303",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹7.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2304",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2301",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2302",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2303",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2304",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2301",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2302",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2303",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2304",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.2 Cr"
+            }
+          ]
+        },
+        "24": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "2401",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2402",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2403",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2404",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2401",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2402",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2403",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2404",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2401",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2402",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2403",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2404",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.3 Cr"
+            }
+          ]
+        },
+        "25": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "2501",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2502",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2503",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2504",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2501",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2502",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2503",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2504",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2501",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2502",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2503",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2504",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.4 Cr"
+            }
+          ]
+        },
+        "26": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "2601",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2602",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2603",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹8.0 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2604",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2601",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2602",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2603",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2604",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2601",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2602",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2603",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2604",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.5 Cr"
+            }
+          ]
+        },
+        "27": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "2701",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2702",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2703",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2704",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2701",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2702",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2703",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2704",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2701",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2702",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2703",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2704",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.6 Cr"
+            }
+          ]
+        },
+        "28": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "2801",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2802",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2803",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2804",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2801",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2802",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2803",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2804",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2801",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2802",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2803",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2804",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.6 Cr"
+            }
+          ]
+        },
+        "29": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "2901",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2902",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2903",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹8.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "2904",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2901",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2902",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2903",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2904",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2901",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2902",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2903",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2904",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.7 Cr"
+            }
+          ]
+        },
+        "30": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "3001",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.1 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3002",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3003",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.1 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3004",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3002",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3003",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3004",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3001",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3002",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3003",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3004",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.8 Cr"
+            }
+          ]
+        },
+        "31": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "3101",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3102",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.2 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3103",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3104",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹9.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3101",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3102",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3103",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3104",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3101",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3102",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3103",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3104",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.9 Cr"
+            }
+          ]
+        },
+        "32": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "3201",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3202",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3203",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3204",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3201",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3202",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3203",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3204",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3201",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3202",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3203",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3204",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.0 Cr"
+            }
+          ]
+        },
+        "33": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "3301",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3302",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.4 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3303",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3304",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3301",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3302",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3303",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3304",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3301",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3302",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3303",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3304",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.0 Cr"
+            }
+          ]
+        },
+        "34": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "3401",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3402",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3403",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹9.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3404",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3401",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3402",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3403",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3404",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3401",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3402",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3403",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3404",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.1 Cr"
+            }
+          ]
+        },
+        "35": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "3501",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3502",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.6 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3503",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3504",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3501",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3502",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3503",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3504",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3501",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3502",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3503",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3504",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.2 Cr"
+            }
+          ]
+        },
+        "36": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "3601",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3602",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3603",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.7 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3604",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3601",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3602",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3603",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3604",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3601",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3602",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3603",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3604",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.3 Cr"
+            }
+          ]
+        },
+        "37": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "3701",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3702",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1850 Sq Ft",
+              "price": "₹4.8 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3703",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹10.0 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3704",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1250 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3701",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3702",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3703",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3704",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3701",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3702",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3703",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3704",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.4 Cr"
+            }
+          ]
+        },
+        "38": {
+          "wings": [
+            {
+              "wing": "B",
+              "flat": "3801",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹10.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3802",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹10.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3803",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹10.5 Cr"
+            },
+            {
+              "wing": "B",
+              "flat": "3804",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3200 Sq Ft",
+              "price": "₹10.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3801",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3802",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3803",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3804",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹7.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3801",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3802",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3803",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3804",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.4 Cr"
+            }
+          ]
+        }
+      }
+    },
+    "right": {
+      "label": "Right Tower",
+      "floors": {
+        "10": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "1001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.3 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1002",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1003",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.3 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1004",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1002",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1003",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1004",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1001",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1002",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1003",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1004",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.2 Cr"
+            }
+          ]
+        },
+        "11": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "1101",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1102",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1103",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹5.8 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1104",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1101",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1102",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1103",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1104",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1101",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1102",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1103",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1104",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.3 Cr"
+            }
+          ]
+        },
+        "12": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "1201",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1202",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1203",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1204",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1201",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1202",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1203",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1204",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1201",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1202",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1203",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1204",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.4 Cr"
+            }
+          ]
+        },
+        "13": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "1301",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1302",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.6 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1303",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1304",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1301",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1302",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1303",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1304",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1301",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1302",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1303",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1304",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.4 Cr"
+            }
+          ]
+        },
+        "14": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "1401",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1402",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1403",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹6.2 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1404",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1401",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1402",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1403",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1404",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1401",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1402",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1403",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1404",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.5 Cr"
+            }
+          ]
+        },
+        "15": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "1501",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1502",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1503",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1504",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1501",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1502",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1503",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1504",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1501",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1502",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1503",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1504",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.6 Cr"
+            }
+          ]
+        },
+        "16": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "1601",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1602",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1603",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1604",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹6.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1601",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1602",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1603",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1604",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1601",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1602",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1603",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1604",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.7 Cr"
+            }
+          ]
+        },
+        "17": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "1701",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1702",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1703",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1704",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1701",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1702",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1703",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1704",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1701",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1702",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1703",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1704",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.8 Cr"
+            }
+          ]
+        },
+        "18": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "1801",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1802",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1803",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1804",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1801",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1802",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1803",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1804",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1801",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1802",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1803",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1804",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.8 Cr"
+            }
+          ]
+        },
+        "19": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "1901",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1902",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1903",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹7.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "1904",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1901",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1902",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1903",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "1904",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1901",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1902",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1903",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "1904",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹1.9 Cr"
+            }
+          ]
+        },
+        "20": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "2001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2002",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2003",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2004",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2002",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2003",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2004",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2001",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2002",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2003",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2004",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.0 Cr"
+            }
+          ]
+        },
+        "21": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "2101",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2102",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2103",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2104",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2101",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2102",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2103",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2104",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2101",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2102",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2103",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2104",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.1 Cr"
+            }
+          ]
+        },
+        "22": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "2201",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2202",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2203",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹7.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2204",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2201",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2202",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2203",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹1.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2204",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2201",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2202",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2203",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2204",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.2 Cr"
+            }
+          ]
+        },
+        "23": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "2301",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2302",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2303",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2304",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2301",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2302",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2303",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2304",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹5.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2301",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2302",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2303",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2304",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.2 Cr"
+            }
+          ]
+        },
+        "24": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "2401",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2402",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2403",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2404",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2401",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2402",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2403",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2404",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2401",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2402",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2403",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2404",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.3 Cr"
+            }
+          ]
+        },
+        "25": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "2501",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2502",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2503",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹8.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2504",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2501",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2502",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2503",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2504",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2501",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2502",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2503",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2504",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.4 Cr"
+            }
+          ]
+        },
+        "26": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "2601",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2602",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2603",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2604",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2601",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2602",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2603",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2604",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2601",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2602",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2603",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2604",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.5 Cr"
+            }
+          ]
+        },
+        "27": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "2701",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2702",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2703",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2704",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹8.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2701",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2702",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2703",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2704",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2701",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2702",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2703",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2704",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.6 Cr"
+            }
+          ]
+        },
+        "28": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "2801",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2802",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2803",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2804",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2801",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2802",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2803",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2804",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2801",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2802",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2803",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2804",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.6 Cr"
+            }
+          ]
+        },
+        "29": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "2901",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.1 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2902",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2903",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.1 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "2904",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2901",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2902",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2903",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "2904",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2901",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2902",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2903",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "2904",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.7 Cr"
+            }
+          ]
+        },
+        "30": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "3001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3002",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.2 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3003",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹9.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3004",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3002",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3003",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3004",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3001",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3002",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3003",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3004",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.8 Cr"
+            }
+          ]
+        },
+        "31": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "3101",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3102",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3103",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3104",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3101",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3102",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3103",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3104",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3101",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3102",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3103",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3104",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹2.9 Cr"
+            }
+          ]
+        },
+        "32": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "3201",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3202",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.4 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3203",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3204",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹9.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3201",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3202",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3203",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3204",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3201",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3202",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3203",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3204",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.0 Cr"
+            }
+          ]
+        },
+        "33": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "3301",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3302",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3303",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3304",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3301",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3302",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3303",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3304",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3301",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3302",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3303",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3304",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.0 Cr"
+            }
+          ]
+        },
+        "34": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "3401",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3402",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.6 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3403",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3404",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹10.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3401",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3402",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.7 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3403",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3404",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.7 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3401",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3402",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3403",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3404",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.1 Cr"
+            }
+          ]
+        },
+        "35": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "3501",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.7 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3502",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3503",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.7 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3504",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3501",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3502",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3503",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3504",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3501",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3502",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3503",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3504",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.2 Cr"
+            }
+          ]
+        },
+        "36": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "3601",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3602",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.8 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3603",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3604",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3601",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3602",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.8 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3603",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹2.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3604",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.8 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3601",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3602",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3603",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.2 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3604",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.3 Cr"
+            }
+          ]
+        },
+        "37": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "3701",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1900 Sq Ft",
+              "price": "₹4.9 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3702",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3703",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹10.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3704",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1300 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3701",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3702",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹3.9 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3703",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3704",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹6.9 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3701",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3702",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3703",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3704",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.4 Cr"
+            }
+          ]
+        },
+        "38": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "3801",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹11.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3802",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹11.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3803",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹11.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3804",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹11.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3801",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3802",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3803",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3804",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹7.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3801",
+              "status": "sold",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3802",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3803",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.3 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3804",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.4 Cr"
+            }
+          ]
+        },
+        "39": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "3901",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹11.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3902",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹11.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3903",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹11.5 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "3904",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹11.5 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3901",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3902",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹4.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3903",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "3904",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹7.0 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3901",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3902",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3903",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.4 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "3904",
+              "status": "reserved",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.5 Cr"
+            }
+          ]
+        },
+        "40": {
+          "wings": [
+            {
+              "wing": "A",
+              "flat": "4001",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹12.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "4002",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹12.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "4003",
+              "status": "reserved",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹12.0 Cr"
+            },
+            {
+              "wing": "A",
+              "flat": "4004",
+              "status": "sold",
+              "type": "PENTHOUSE",
+              "size": "3400 Sq Ft",
+              "price": "₹12.0 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "4001",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "4002",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1750 Sq Ft",
+              "price": "₹4.1 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "4003",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1150 Sq Ft",
+              "price": "₹3.2 Cr"
+            },
+            {
+              "wing": "D",
+              "flat": "4004",
+              "status": "available",
+              "type": "PENTHOUSE",
+              "size": "3100 Sq Ft",
+              "price": "₹7.1 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "4001",
+              "status": "reserved",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "4002",
+              "status": "available",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.6 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "4003",
+              "status": "available",
+              "type": "4BHK + SPR",
+              "size": "1800 Sq Ft",
+              "price": "₹4.5 Cr"
+            },
+            {
+              "wing": "E",
+              "flat": "4004",
+              "status": "sold",
+              "type": "3BHK + SPR",
+              "size": "1200 Sq Ft",
+              "price": "₹3.6 Cr"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
