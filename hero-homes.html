@@ -435,7 +435,8 @@
 
 <div class="top-actions ui-layer">
   <button title="Fullscreen" id="btnFullscreen">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+    <svg class="icon-enter" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+    <svg class="icon-exit" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M8 3v3a2 2 0 01-2 2H3m18 0h-3a2 2 0 01-2-2V3m0 18v-3a2 2 0 012-2h3M3 16h3a2 2 0 012 2v3"/></svg>
   </button>
   <button title="Contact" onclick="openContact()">
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3-8.58A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14A16 16 0 0015.86 17.09l1.41-1.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -862,8 +863,8 @@
     ctx.drawImage(img, (cw-iw*sc)/2, (ch-ih*sc)/2, iw*sc, ih*sc);
     counter.textContent = `${String(idx+1).padStart(3,'0')} / ${TOTAL}`;
     const pct = idx / (TOTAL-1) * 100;
-    fillEl.style.width = pct + '%';
-    thumbEl.style.left = `calc(${pct}% - 7px)`;
+    if(fillEl)  fillEl.style.width = pct + '%';
+    if(thumbEl) thumbEl.style.left = `calc(${pct}% - 7px)`;
   }
 
   function setFrame(idx) {
@@ -898,16 +899,8 @@
 
   /* ── TOUCH ── */
   let touchStart=null, touchFrame=0;
-  function isTouchOnUI(e) {
-    const t = e.touches[0];
-    canvas.style.pointerEvents = 'none';
-    const el = document.elementFromPoint(t.clientX, t.clientY);
-    canvas.style.pointerEvents = '';
-    return el && el.closest('.ui-layer, #btnToggleUI, button, a, input');
-  }
-
-  canvas.addEventListener('touchstart', e => { if(mode!=='home')return; if(isTouchOnUI(e))return; e.preventDefault(); touchStart=e.touches[0].clientX; touchFrame=currentFrame; hideHint(); stopPlay(); }, {passive:false});
-  canvas.addEventListener('touchmove', e => { if(mode!=='home')return; if(touchStart===null)return; e.preventDefault(); setFrame(Math.round(touchFrame+(e.touches[0].clientX-touchStart)/TOUCH_SENS)); }, {passive:false});
+  canvas.addEventListener('touchstart', e => { if(mode!=='home')return; e.preventDefault(); touchStart=e.touches[0].clientX; touchFrame=currentFrame; hideHint(); stopPlay(); }, {passive:false});
+  canvas.addEventListener('touchmove', e => { if(mode!=='home')return; e.preventDefault(); if(!touchStart)return; setFrame(Math.round(touchFrame+(e.touches[0].clientX-touchStart)/TOUCH_SENS)); }, {passive:false});
   canvas.addEventListener('touchend', () => { touchStart=null; });
 
   /* ── WHEEL ── */
@@ -923,22 +916,45 @@
 
   /* ── SCRUBBER ── */
   let scrubbing=false;
-  function scrubTo(x){const r=track.getBoundingClientRect();setFrame(Math.round(Math.max(0,Math.min(1,(x-r.left)/r.width))*(TOTAL-1)));}
-  track.addEventListener('mousedown',e=>{scrubbing=true;scrubTo(e.clientX);stopPlay();});
+  function scrubTo(x){if(!track)return;const r=track.getBoundingClientRect();setFrame(Math.round(Math.max(0,Math.min(1,(x-r.left)/r.width))*(TOTAL-1)));}
+  if(track){
+    track.addEventListener('mousedown',e=>{scrubbing=true;scrubTo(e.clientX);stopPlay();});
+    track.addEventListener('touchstart',e=>{scrubbing=true;scrubTo(e.touches[0].clientX);stopPlay();},{passive:true});
+  }
   window.addEventListener('mousemove',e=>{if(scrubbing)scrubTo(e.clientX);});
   window.addEventListener('mouseup',()=>{scrubbing=false;});
-  track.addEventListener('touchstart',e=>{scrubbing=true;scrubTo(e.touches[0].clientX);stopPlay();},{passive:true});
   window.addEventListener('touchmove',e=>{if(scrubbing)scrubTo(e.touches[0].clientX);},{passive:true});
   window.addEventListener('touchend',()=>{scrubbing=false;});
 
   /* ── PLAY ── */
   function togglePlay(){isPlaying?stopPlay():startPlay();}
-  function startPlay(){isPlaying=true;playIcon.innerHTML='<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';playTimer=setInterval(()=>setFrame(currentFrame+1),60);hideHint();}
-  function stopPlay(){if(!isPlaying)return;isPlaying=false;playIcon.innerHTML='<polygon points="5 3 19 12 5 21 5 3"/>';clearInterval(playTimer);}
-  playBtn.addEventListener('click', togglePlay);
+  function startPlay(){isPlaying=true;if(playIcon)playIcon.innerHTML='<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';playTimer=setInterval(()=>setFrame(currentFrame+1),60);hideHint();}
+  function stopPlay(){if(!isPlaying)return;isPlaying=false;if(playIcon)playIcon.innerHTML='<polygon points="5 3 19 12 5 21 5 3"/>';clearInterval(playTimer);}
+  if(playBtn) playBtn.addEventListener('click', togglePlay);
 
   /* ── FULLSCREEN ── */
-  document.getElementById('btnFullscreen').addEventListener('click',()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();});
+  const btnFS = document.getElementById('btnFullscreen');
+  const fsEnter = btnFS.querySelector('.icon-enter');
+  const fsExit  = btnFS.querySelector('.icon-exit');
+
+  function isFS() {
+    return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+  }
+  function syncFSIcon() {
+    const full = isFS();
+    fsEnter.style.display = full ? 'none'  : '';
+    fsExit.style.display  = full ? ''      : 'none';
+    btnFS.title = full ? 'Exit Fullscreen' : 'Fullscreen';
+  }
+  function enterFS() {
+    const el = document.documentElement;
+    (el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen || function(){}).call(el);
+  }
+  function exitFS() {
+    (document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen || function(){}).call(document);
+  }
+  btnFS.addEventListener('click', () => { isFS() ? exitFS() : enterFS(); });
+  ['fullscreenchange','webkitfullscreenchange','mozfullscreenchange','MSFullscreenChange'].forEach(ev => document.addEventListener(ev, syncFSIcon));
 
   /* ── HINT ── */
   function hideHint(){if(interacted)return;interacted=true;hint.classList.add('hidden');}
